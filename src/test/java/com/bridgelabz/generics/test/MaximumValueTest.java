@@ -16,18 +16,20 @@ public class MaximumValueTest {
         @Test
         public void whenGivenNo_InFirstPosition_thenReturnSameNumber()
         {
-
-                Assert.assertSame(40,MaximumValue.getMax(40,20,10));
+                Integer expected = 40;
+                Assert.assertEquals(expected,MaximumValue.getMax(40,20,10));
         }
         @Test
         public void whenGivenNo_InSecondPosition_thenReturnSameNumber()
         {
-                Assert.assertSame(40,MaximumValue.getMax(30,40,10));
+                Integer expected = 40;
+                Assert.assertSame(expected,MaximumValue.getMax(30,40,10));
         }
         @Test
         public void whenGivenNo_InThirdPosition_thenReturnSameNumber()
         {
-                Assert.assertSame(40,MaximumValue.getMax(20,10,40));
+                Integer expected = 40;
+                Assert.assertEquals(expected,MaximumValue.getMax(20,10,40));
         }
 
         /**
@@ -62,21 +64,54 @@ public class MaximumValueTest {
         @Test
         public void whenGivenMaxString_InFirstPosition_thenReturnSameString()
         {
-
-                Assert.assertEquals("watermelon",MaximumValue.getMax("watermelon",
-                        "apple", "banana"));
+                String expected = "watermelon";
+                Assert.assertEquals(expected,MaximumValue.getMax("watermelon", "apple",
+                        "banana"));
         }
         @Test
         public void whenGivenMaxString_InSecondPosition_thenReturnSameString()
         {
-                Assert.assertEquals("watermelon",MaximumValue.getMax("apple",
-                        "watermelon", "banana"));
+                String expected = "watermelon";
+                Assert.assertEquals(expected,MaximumValue.getMax("apple", "watermelon",
+                        "banana"));
         }
         @Test
         public void whenGivenMaxString_InThirdPosition_thenReturnSameString()
         {
-                Assert.assertEquals("watermelon",MaximumValue.getMax("apple" ,
-                        "banana" , "watermelon"));
+                String expected = "watermelon";
+                Assert.assertEquals(expected,MaximumValue.getMax("apple" , "banana" ,
+                        "watermelon"));
+        }
+        /**
+         * for checking more then 3 inputs in Integer
+         */
+        @Test
+        public void whenGivenMoreThen3Inputs_InInteger_ThenReturnAndPrintMaxInteger()
+        {
+                Integer expected = 55;
+                Assert.assertEquals(expected,MaximumValue.getMax(10,20,30,
+                        50,55,22,44));
+        }
+
+        /**
+         * for checking more then 3 inputs in float
+         */
+        @Test
+        public void whenGivenMoreThen3Inputs_InFloat_ThenReturnAndPrintMaxFloat()
+        {
+                Float expected = 55.5f;
+                Assert.assertEquals(expected,MaximumValue.getMax(10.5f,55.5f,20.5f,30.5f,
+                        50.3f,22.3f,44.2f));
+        }
+        /**
+         * for checking more then 3 inputs in String
+         */
+        @Test
+        public void whenGivenMoreThen3Inputs_InString_ThenReturnAndPrintMaxString()
+        {
+                String expected = "watermelon";
+                Assert.assertEquals(expected,MaximumValue.getMax("apple","orange","watermelon",
+                        "papaya","banana"));
         }
 
 }
