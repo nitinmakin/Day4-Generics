@@ -13,7 +13,7 @@ public class MaximumValue <E extends Comparable >
         this.thirdVariable = thirdVariable;
     }
 
-    public static <E extends Comparable > E getMax(E firstVariable , E secondVariable , E thirdVariable)
+    public static <E extends Comparable > E getMax(E firstVariable , E secondVariable , E thirdVariable, E... inputs)
    {
        if (firstVariable.compareTo(secondVariable) > 0 && firstVariable.compareTo(thirdVariable) > 0)
            return  firstVariable;
