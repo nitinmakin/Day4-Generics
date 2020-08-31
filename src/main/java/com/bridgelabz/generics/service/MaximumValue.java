@@ -21,4 +21,15 @@ public class MaximumValue
         else
             return c;
     }
+    public String getMaxString(String a, String b, String c)
+    {
+        if(a.length() > b.length() && b.length() > c.length())
+            return a;
+        else if (b.length() > 0)
+            return b;
+        else
+            return c;
+    }
+
+
 }

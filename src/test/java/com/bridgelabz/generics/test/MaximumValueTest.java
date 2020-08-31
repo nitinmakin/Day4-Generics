@@ -52,5 +52,25 @@ public class MaximumValueTest {
                 Assert.assertEquals(40.5f,maximumValue.getMaxFloat(20.2f,10.5f,40.5f),0.0f);
         }
 
+        /**
+         * for checking max string
+         */
+
+        @Test
+        public void whenGivenMaxString_InFirstPosition_thenReturnSameString()
+        {
+               Assert.assertEquals("banana",maximumValue.getMaxString("banana","apple","kiwi"));
+        }
+        @Test
+        public void whenGivenMaxString_InSecondPosition_thenReturnSameString()
+        {
+                Assert.assertEquals("banana",maximumValue.getMaxString("apple","banana","kiwi"));
+        }
+        @Test
+        public void whenGivenMaxString_InThirdPosition_thenReturnSameString()
+        {
+                Assert.assertEquals(40.5f,maximumValue.getMaxString("kiwi","apple","banana"));
+        }
+
 
 }
