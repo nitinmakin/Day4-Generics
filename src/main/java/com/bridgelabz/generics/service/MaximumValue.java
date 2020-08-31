@@ -34,9 +34,12 @@ public class MaximumValue <E extends Comparable >
                maxValue = getMaxValue(maxValue , inputs);
 
            }
-       System.out.println("Max value is--->"+maxValue);
+       /**
+        * calling print method
+        */
+       printMaxValue(maxValue);
 
-           return maxValue;
+       return maxValue;
 
    }
 
@@ -52,4 +55,8 @@ public class MaximumValue <E extends Comparable >
       }
       return max;
    }
+    private static <G extends Comparable> void printMaxValue(G maxvalue)
+    {
+        System.out.println("Maximum value is: " + maxvalue);
+    }
 }
