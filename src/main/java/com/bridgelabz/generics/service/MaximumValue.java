@@ -1,16 +1,28 @@
 package com.bridgelabz.generics.service;
 
-public class MaximumValue
+public class MaximumValue <E extends Comparable >
 {
-   public  <E extends Comparable >E getMax(E arr1[])
+    E firstVariable;
+    E secondVariable;
+    E thirdVariable;
+
+    public MaximumValue(E firstVariable, E secondVariable, E thirdVariable)
+    {
+        this.firstVariable = firstVariable;
+        this.secondVariable = secondVariable;
+        this.thirdVariable = thirdVariable;
+    }
+
+    public static <E extends Comparable > E getMax(E firstVariable , E secondVariable , E thirdVariable)
    {
-       E max = arr1[0];
-       for (int i =0 ; i< arr1.length ; i++)
-       {
-           if( max.compareTo(arr1[i]) < 0)
-               max = arr1[i];
-       }
-       return max;
+       if (firstVariable.compareTo(secondVariable) > 0 && firstVariable.compareTo(thirdVariable) > 0)
+           return  firstVariable;
+       else if(secondVariable.compareTo(thirdVariable) > 0)
+           return secondVariable;
+       else
+           return thirdVariable;
    }
+
+
 
 }

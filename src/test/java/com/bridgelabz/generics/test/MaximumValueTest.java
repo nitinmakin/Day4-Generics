@@ -1,7 +1,6 @@
 package com.bridgelabz.generics.test;
 import com.bridgelabz.generics.service.MaximumValue;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import static java.lang.StrictMath.E;
@@ -9,35 +8,26 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class MaximumValueTest {
-        MaximumValue maximumValue = null;
-
-        @Before
-        public void createObject()
-        {
-            maximumValue = new MaximumValue();
-        }
 
         /**
          * for checking integer
          */
 
         @Test
-        public void whenGivenNoInArray_InFirstPosition_thenReturnSameNumber()
+        public void whenGivenNo_InFirstPosition_thenReturnSameNumber()
         {
-                Integer arr[] = {40,20,10};
-                Assert.assertSame(40,maximumValue.getMax(arr));
+
+                Assert.assertSame(40,MaximumValue.getMax(40,20,10));
         }
         @Test
-        public void whenGivenNoInArray_InSecondPosition_thenReturnSameNumber()
+        public void whenGivenNo_InSecondPosition_thenReturnSameNumber()
         {
-                Integer arr[] = {20,40,10};
-                Assert.assertSame(40,maximumValue.getMax(arr));
+                Assert.assertSame(40,MaximumValue.getMax(30,40,10));
         }
         @Test
-        public void whenGivenNoInArray_InThirdPosition_thenReturnSameNumber()
+        public void whenGivenNo_InThirdPosition_thenReturnSameNumber()
         {
-                Integer arr[] = {10,20,40};
-                Assert.assertSame(40,maximumValue.getMax(arr));
+                Assert.assertSame(40,MaximumValue.getMax(20,10,40));
         }
 
         /**
@@ -45,24 +35,24 @@ public class MaximumValueTest {
          */
 
         @Test
-        public void whenGivenFloatNoInArray_InFirstPosition_thenReturnSameNumber()
+        public void whenGivenFloatNo_InFirstPosition_thenReturnSameNumber()
         {
-                Float arr[] = {12.5f,4.5f,0.1f};
-                Assert.assertEquals(12.5f,maximumValue.getMax(arr),0.0);
-        }
-        @Test
-        public void whenGivenFloatNoInArray_InSecondPosition_thenReturnSameNumber()
-        {
-                Float arr[] = {4.5f,12.5f,0.1f};
-                Assert.assertEquals(12.5f,maximumValue.getMax(arr),0.0);
-        }
-        @Test
-        public void whenGivenFloatNoInArray_InThirdPosition_thenReturnSameNumber()
-        {
+                Float expectedFirst=12.5f;
+                Assert.assertEquals(expectedFirst,MaximumValue.getMax(12.5f,2.4f,3.8f));
 
-                Float arr[] = {0.5f,4.5f,12.5f};
-                System.out.println(maximumValue.getMax(arr));
-              Assert.assertEquals(12.5,maximumValue.getMax(arr),0.0);
+        }
+        @Test
+        public void whenGivenFloatNo_InSecondPosition_thenReturnSameNumber()
+        {
+                Float expectedSecond=12.5f;
+                Assert.assertEquals(expectedSecond, MaximumValue.getMax(1.2f , 12.5f , 2.7f));
+        }
+        @Test
+        public void whenGivenFloatNo_InThirdPosition_thenReturnSameNumber()
+        {
+                Float expectedThird=12.5f;
+                Assert.assertEquals(expectedThird, MaximumValue.getMax(1.2f , 2.5f , 12.5f));
+
         }
 
         /**
@@ -70,23 +60,23 @@ public class MaximumValueTest {
          */
 
         @Test
-        public void whenGivenMaxStringInArray_InFirstPosition_thenReturnSameString()
+        public void whenGivenMaxString_InFirstPosition_thenReturnSameString()
         {
-                String arr[] = {"watermelon" , "apple"  , "banana"};
-                Assert.assertEquals("watermelon",maximumValue.getMax(arr));
+
+                Assert.assertEquals("watermelon",MaximumValue.getMax("watermelon",
+                        "apple", "banana"));
         }
         @Test
-        public void whenGivenMaxStringInArray_InSecondPosition_thenReturnSameString()
+        public void whenGivenMaxString_InSecondPosition_thenReturnSameString()
         {
-                String arr[] = { "apple"  , "watermelon" , "banana"};
-                Assert.assertEquals("watermelon",maximumValue.getMax(arr));
+                Assert.assertEquals("watermelon",MaximumValue.getMax("apple",
+                        "watermelon", "banana"));
         }
         @Test
         public void whenGivenMaxString_InThirdPosition_thenReturnSameString()
         {
-                String arr[] = { "apple"  , "banana" , "watermelon"};
-                Assert.assertEquals("watermelon",maximumValue.getMax(arr));
+                Assert.assertEquals("watermelon",MaximumValue.getMax("apple" ,
+                        "banana" , "watermelon"));
         }
-
 
 }
